@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
-
 @section('pageTitle', $pageTitle)
-
 
 @section('main')
 
@@ -28,7 +26,6 @@
 
       </div>
 
-
       <div class="form-item">
 
         <label>Detail:</label>
@@ -36,7 +33,6 @@
         <textarea class="form-text-area">{{ $task->detail }}</textarea>
 
       </div>
-
 
       <div class="form-item">
 
@@ -53,7 +49,6 @@
         >
 
       </div>
-
 
       <div class="form-item">
 

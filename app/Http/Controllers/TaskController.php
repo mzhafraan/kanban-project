@@ -1,19 +1,17 @@
 <?php
 
-
 namespace App\Http\Controllers;
-
 
 use Illuminate\Http\Request;
 
-
 class TaskController extends Controller
+
 {
 
     private $tasks;
 
-
     public function __construct()
+
     {
 
         $this->tasks = [
@@ -106,46 +104,46 @@ class TaskController extends Controller
 
     }
 
-
     public function index()
-    {
 
-        $pageTitle = 'Task List'; // Ditambahkan
+    {
 
         $tasks = $this->tasks;
 
-        return view('tasks.index', [
+        $pageTitle = 'Task List'; 
+        $tasks = $this->tasks;
+         return view('tasks.index', [
+        'pageTitle' => $pageTitle,
+        'tasks' => $tasks,
 
-            'pageTitle' => $pageTitle, //Ditambahkan
-
-            'tasks' => $tasks,
-
-        ]);
+    ]);
 
     }
 
     public function edit($id)
+
     {
 
         $pageTitle = 'Edit Task';
 
         $tasks = $this->tasks;
 
-
         $task = $tasks[$id - 1];
-
 
         return view('tasks.edit', ['pageTitle' => $pageTitle, 'task' => $task]);
 
     }
 
     public function create()
+
     {
+
         $pageTitle = 'Create Task';
 
         $tasks = $this->tasks;
 
         return view('tasks.create', ['pageTitle' => $pageTitle]);
+
     }
 
 }

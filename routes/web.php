@@ -10,7 +10,7 @@ Route::get('/', function () {
 
     return view('home');
 
-});
+})->name('home'); // name ditambahkan
 
 
-Route::get('/tasks/', [TaskController::class, 'index']); // Ditambahkan
+Route::get('/tasks/', [TaskController::class, 'index'])->name('tasks.index'); // name ditambahkan
